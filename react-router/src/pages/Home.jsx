@@ -1,13 +1,17 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   return (
-    <>
-    <Navbar/>
-    <h1>Home</h1>
-    </>
-  )
-}
+    <section className="text-center py-5">
+      <h1 className="mb-3">Benvenuto nel mini e commerce</h1>
+      <p className="mb-4">
+        Scopri la nostra selezione di prodotti al miglior prezzo
+      </p>
+      <NavLink to="/products" className="btn btn-primary">
+        Vai ai prodotti
+      </NavLink>
+    </section>
+  );
+};
 
 export default Home;

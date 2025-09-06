@@ -1,22 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
-import Navbar from "./components/Navbar";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      {/* Contenuto pagine */}
-      <div className="container py-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="products" element={<Products />} />
+
+        <Route path="*" element={<h1>Pagina non trovata</h1>} />
+      </Route>
+    </Routes>
   );
 }
 

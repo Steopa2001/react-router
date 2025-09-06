@@ -1,17 +1,17 @@
 import React from "react";
-import { link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav>
       <ul className="list-unstyled d-flex">
-        <li>
+        <li className="me-3">
           <NavLink to={"/"}>Home</NavLink>
         </li>
-        <li>
+        <li className="me-3">
           <NavLink to={"/about"}>About</NavLink>
         </li>
-        <li>
+        <li className="me-3">
           <NavLink to={"/products"}>Products</NavLink>
         </li>
       </ul>

@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link,useNavigate } from "react-router-dom";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const currentId = Number(id);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -51,7 +53,7 @@ const ProductDetail = () => {
     return (
       <section className="py-3">
         <div className="mb-3">
-          <Link to="/products" className="text-decoration-none">← Torna ai prodotti</Link>
+          <Link to="/products" className="text-decoration-none"> Torna ai prodotti</Link>
         </div>
         <div className="alert alert-danger">{error}</div>
       </section>
@@ -62,7 +64,7 @@ const ProductDetail = () => {
     return (
       <section className="py-3">
         <div className="mb-3">
-          <Link to="/products" className="text-decoration-none">← Torna ai prodotti</Link>
+          <Link to="/products" className="text-decoration-none"> Torna ai prodotti</Link>
         </div>
         <p>Prodotto non trovato.</p>
       </section>
@@ -110,6 +112,24 @@ const ProductDetail = () => {
               Continua a navigare
             </Link>
           </div>
+
+          {/*  Pulsanti navigazione */}
+          <div className="d-flex gap-2 mt-4">
+            <button
+              className="btn btn-outline-secondary"
+              disabled={currentId <= 1}
+              onClick={() => navigate(`/products/${currentId - 1}`)}
+            >
+               Precedente
+            </button>
+            <button
+              className="btn btn-outline-secondary"
+              onClick={() => navigate(`/products/${currentId + 1}`)}
+            >
+              Successivo 
+            </button>
+          </div>
+
         </div>
       </div>
     </section>

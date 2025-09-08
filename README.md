@@ -19,7 +19,7 @@ Bonus
 Centralizziamo la Navbar usando un componente Layout
 Gestiamo la classe active per i link attivi nella Navbar
 
-## CONSEGNA 05/08/2025
+## CONSEGNA 05/09/2025
 
 ## ESERCIZIO 2 
 
@@ -37,4 +37,4 @@ Bonus
 
 Aggiungiamo nella pagina di dettaglio dei pulsanti per navigare al prodotto precedente o successivo (usando useNavigate() programmaticamente)
 
-## CONSEGNA 08/08/2025
+## CONSEGNA 08/09/2025

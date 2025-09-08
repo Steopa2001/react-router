@@ -3,3 +3,7 @@
   object-fit: contain;
 }
 
+.img-fluid {
+  max-height: 360;
+  object-fit: contain;
+}

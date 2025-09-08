@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // url api
 const url = "https://fakestoreapi.com/products";
@@ -34,14 +35,16 @@ const Products = () => {
                 {product.category}
               </span>
 
-              {/* box immagine con ratio */}
-              <div className="ratio ratio-4x3 bg-light rounded-top-3 product-img-box">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-100 h-100 p-3 product-img"
-                />
-              </div>
+              {/* box immagine */}
+              <Link to={`/products/${product.id}`} className="text-decoration-none text-reset">
+                <div className="ratio ratio-4x3 bg-light rounded-top-3 product-img-box">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-100 h-100 p-3 product-img"
+                  />
+                </div>
+              </Link>
 
               {/* contenuto card */}
               <div className="card-body d-flex flex-column">
